@@ -46,18 +46,32 @@ nav ul li a{
     color: white;
     text-decoration: none;
     font-size: 20px;
+    font-weight: 600;
+    font-style: italic;
+    transition: 0.5s;
+}
+
+nav ul li a:hover{
+    color: #0082E1;
 }
 
 .login{
     padding: 10px 20px;
-    border: 1px solid white;
+    border: 1px solid whitesmoke;
     border-radius: 14px;
     font-size: 15px;
     background-color: #0082E1;
-    color: white;
+    color: whitesmoke;
     font-weight: 600;
     width: 10%;
     cursor: pointer;
+    transition: 0.8s;
+}
+
+.login:hover{
+    border: 1px solid #0082E1;
+    background-color: whitesmoke;
+    color: #0082E1;
 }
 
 .left-section{
@@ -92,5 +106,12 @@ nav ul li a{
     font-weight: 600;
     width: 40%;
     cursor: pointer;
+    transition: 0.8s;
 
+}
+.left-section button:hover{
+    border: 1px solid whitesmoke;
+    background-color: #0082E1;
+    color: whitesmoke;
+    
 }
