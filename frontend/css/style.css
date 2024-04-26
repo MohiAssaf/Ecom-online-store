@@ -5,12 +5,56 @@
     box-sizing: border-box;
 }
 
-.container {
+.hero-section {
     width: 100%;
     min-height: 100vh;
-    background-image: url('../images/abstract-bluish-paint-background-wallpaper.jpg');
+    background-image:  url('../images/hero-background.jpg');
     background-size: cover;
     background-position: center;
     padding: 10px 8%;
 
+}
+
+
+nav{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+
+}
+
+.hero-section .logo{
+    width: 17%;
+    cursor: pointer;
+}
+
+nav ul{
+    width: 100%;
+    list-style-type: none;
+    text-align: right;
+    padding-right: 60px;
+}
+
+nav ul li{
+    display: inline-block;
+    margin: 10px 20px;
+}
+
+nav ul li a{
+    color: white;
+    text-decoration: none;
+}
+
+.login{
+    padding: 10px 20px;
+    border: 1px solid white;
+    border-radius: 14px;
+    font-size: 15px;
+    background-color: #0082E1;
+    color: white;
+    font-weight: 600;
+    width: 10%;
+    cursor: pointer;
 }
