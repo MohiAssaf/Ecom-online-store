@@ -118,12 +118,14 @@ nav ul li a:hover{
 
 .popular-items{
     width: 100%;
-    min-height: 100vh;
-    background-color: whitesmoke;
+    min-height: 90vh;
+    background: url('../images/pop-background.jpg');
+    background-position: center;
+    background-size: cover;
     padding: 10px;
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 10%;
 }
 
 .left-popular-text{
@@ -132,6 +134,69 @@ nav ul li a:hover{
     flex-direction: column;
     justify-content: center;
     align-items: start;
-    gap: 15px;
+    gap: 20px;
     padding-left: 50px;
+}
+
+.title-p{
+    color: #8b8a93;
+    font-size: 35px;
+    font-style: italic;
+}
+
+.desc-p{
+    font-size: 20px;
+    color: #ADA9BB;
+}
+
+.products-p{
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+    color: #54a6e1;
+}
+
+.products-p:hover{
+    text-decoration: underline;
+}
+
+.item-cards{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.right-popular-items img{
+    height: 60vh;
+}
+
+.item-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 15px;
+    gap: 10px;
+}
+
+.item{
+    outline-style: solid;
+    outline-width: 1px;
+    outline-color: gray;
+    outline-offset: 5px;
+}
+
+.item-content .item-title{
+    font-size: 20px;
+    font-style: italic;
+    color: #54a6e1;
+}
+
+.reviews .checked{
+    color: #0082E1;
+}
+
+.item-price{
+    font-size: 16px;
+    font-weight: 600;
 }
