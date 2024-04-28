@@ -250,3 +250,23 @@ nav ul li a:hover{
     color: #8b8a93;
     font-weight: 600;
 }
+
+.clothing-info{
+    width: 100%;
+    min-height: auto;
+}
+
+.clothing-info .card{
+    display: flex;
+    flex-direction: row;
+    min-height: 50vh;
+}
+
+.clothing-info .card .left,
+.clothing-info .card .right{
+    width: 50%;
+}
+
+.clothing-info .card .left .clothing-img{
+    background: ;
+}
