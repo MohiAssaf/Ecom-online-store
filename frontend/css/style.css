@@ -204,9 +204,7 @@ nav ul li a:hover{
 .why-us{
     width: 100%;
     min-height: 60vh;
-    background-color: #b3c1d7;
-    background-position: center;
-    background-size: cover;
+    background-color: whitesmoke;
     padding: 100px;
     display: flex;
 
@@ -222,8 +220,8 @@ nav ul li a:hover{
 .cards-revs .card{
     width: 20%;
     height: 75%;
-    border: 1px solid white;
-    background-color: white;
+    border: 1px solid #54a6e1;
+    background-color: #54a6e1;
     padding: 20px;
     border-radius: 50%;
     display: flex;
@@ -236,10 +234,11 @@ nav ul li a:hover{
 
 .cards-revs .card i{
     font-size: 50px;
-    color: #54a6e1;
+    color: whitesmoke;
 }
 
 .cards-revs .card .title{
+    color: whitesmoke;
     padding-bottom: 15px;
     font-size: 1.3rem;
     text-transform: capitalize;
@@ -247,7 +246,7 @@ nav ul li a:hover{
 
 .cards-revs .card .desc{
     text-align: center;
-    color: #8b8a93;
+    color: whitesmoke;
     font-weight: 600;
 }
 
