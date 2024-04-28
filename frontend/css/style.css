@@ -253,20 +253,65 @@ nav ul li a:hover{
 
 .clothing-info{
     width: 100%;
-    min-height: auto;
 }
 
 .clothing-info .card{
     display: flex;
     flex-direction: row;
-    min-height: 50vh;
+    min-height: 80vh;
 }
 
-.clothing-info .card .left,
-.clothing-info .card .right{
+.clothing-info .card2{
+    display: flex;
+    flex-direction: row-reverse;
+    min-height: 80vh;
+}
+
+.clothing-info .left,
+.clothing-info .right{
     width: 50%;
 }
 
-.clothing-info .card .left .clothing-img{
-    background: ;
+.clothing-info .card .left {
+    background: url('../images/clothinginfo1.webp');
+    background-position: top;
+    background-size: cover;
+}
+
+.clothing-info .card2 .left{
+    background: url('../images/clothing-info2.webp');
+    background-position: top;
+    background-size: cover;
+}
+
+.clothing-info .right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10%;
+
+}
+
+.clothing-info  .content{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.clothing-info  .content .title{
+    font-size: 3rem;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.clothing-info  .content .desc{
+    font-size: 1.5rem;
+    color: #8b8a93;
+    font-weight: 600;
+}
+
+.clothing-info  .content a{
+    font-size: 1.5rem;
+    color: black;
+    font-weight: 600;
 }
