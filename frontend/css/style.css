@@ -8,7 +8,7 @@
 .hero-section {
     width: 100%;
     min-height: 100vh;
-    background-image:  url('../images/mainback.jpg');
+    background-image:  url('../images/background-hero.jpg');
     background-size: cover;
     background-position: center;
     padding: 10px 8%;
@@ -77,10 +77,12 @@ nav ul li a:hover{
 .left-section{
     margin-top: 12%;
     color: #fff;
-    max-width: 50%;
+    width: 100%;
 
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: end;
     gap: 30px;
 }
 
@@ -90,19 +92,20 @@ nav ul li a:hover{
     line-height: 85px;
 }
 
-.left-section p{
+.left-section .paragraph{
     font-size: 20px;
     font-weight: 600;
     color: gray;
+    width: 40%;
 }
 
 .left-section button{
     padding: 10px 20px;
-    border: 1px solid #0082E1;
+    border: 1px solid #714a00;
     border-radius: 14px;
     font-size: 15px;
     background-color: white;
-    color: #0082E1;
+    color: #714a00;
     font-weight: 600;
     width: 40%;
     cursor: pointer;
@@ -111,7 +114,7 @@ nav ul li a:hover{
 }
 .left-section button:hover{
     border: 1px solid whitesmoke;
-    background-color: #0082E1;
+    background-color: #714a00;
     color: whitesmoke;
     
 }
