@@ -16,6 +16,44 @@ body{
 
 .login-form{
     width: 420px;
-    background-color: aqua;
-    color: antiquewhite;
+    background-color:whitesmoke;
+    color: black;
+    padding: 1.4rem;
+    min-height: 60vh;
+}
+
+
+.login-form .title{
+    font-size: 2.2rem;
+    text-align: center;
+}
+
+.login-form .input-box{
+    position: relative;
+    width: 100%;
+    height: 3rem;
+    margin: 30px 0;
+
+}
+
+.login-form input{
+    width: 100%;
+    height: 3rem;
+    background: transparent;
+    outline: none;
+    border: 2px solid black;
+    border-radius: 2.2rem;
+
+}
+
+.input-box input::placeholder{
+    color: gray;
+}
+
+.input-box i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.3rem;
 }
