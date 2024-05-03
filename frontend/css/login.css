@@ -19,7 +19,7 @@ body{
     background-color:whitesmoke;
     color: black;
     padding: 1.4rem;
-    min-height: 60vh;
+    border-radius: 1rem;
 }
 
 
@@ -33,16 +33,17 @@ body{
     width: 100%;
     height: 3rem;
     margin: 30px 0;
-
 }
 
-.login-form input{
+.login-form .input-box input{
     width: 100%;
     height: 3rem;
     background: transparent;
     outline: none;
     border: 2px solid black;
     border-radius: 2.2rem;
+    font-size: 1.1rem;
+    padding: 0.5rem 1.5rem;
 
 }
 
@@ -56,4 +57,42 @@ body{
     top: 50%;
     transform: translateY(-50%);
     font-size: 1.3rem;
+}
+
+.rememberme{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    margin: -1rem 0 1rem;
+}
+
+.rememberme label input{
+    margin-right: 6px;
+}
+
+.rememberme a{
+    color: black;
+    text-decoration: none;
+}
+
+.rememberme a:hover{
+    text-decoration: underline;
+}
+
+.btn{
+    width: 100%;
+    padding: 0.7rem 1rem;
+    border: none;
+    background-color: lightblue;
+    border-radius: 1rem;
+    font-size: 1rem;
+    margin: 2rem 0;
+}
+
+.register a{
+    color: rgb(84, 115, 126);
+}
+.register a:hover{
+    text-decoration: none;
 }
