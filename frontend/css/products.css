@@ -42,6 +42,50 @@ img{
 
 .product-cards{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, auto));
+    grid-template-columns: repeat(auto-fit, minmax(250px, auto));
     gap: 1rem;
+}
+
+.product-card{
+    position: relative;
+}
+
+.product-card:hover{
+    padding: 10px;
+    border: 1px solid black;
+    transition: .6s;
+}
+
+.product-img{
+    width: 100%;
+    height: auto;
+    margin-bottom: 0.5rem;
+
+}
+
+.product-name{
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1.4rem;
+}
+
+.product-price{
+    font-weight: 500;
+}
+
+.product-addtocart{
+    position: absolute;
+    bottom: 8px;
+    right: 10px;
+    text-transform: uppercase;
+    background: var(--text-color);
+    color: var(--bg-color);
+    padding: .4rem .5rem;
+    border-radius: .4rem;
+    cursor: pointer;
+}
+
+.product-addtocart:hover{
+    background-color: #33313e;
+    transition: .4s;
 }
