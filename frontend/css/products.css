@@ -20,3 +20,28 @@
 body{
     color: var(--text-color);
 }
+
+
+img{
+    width: 100%;
+}
+
+.products-title{
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 1rem;
+}
+
+.products{
+    max-width: 1068px;
+    margin: auto;
+    width: 100%;
+    padding: 3rem 2rem;
+}
+
+.product-cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, auto));
+    gap: 1rem;
+}
