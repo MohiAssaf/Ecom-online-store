@@ -69,9 +69,13 @@ img{
     margin-bottom: 1.4rem;
 }
 
+.product-div{
+    margin: 3rem;
+}
+
 .product-price{
     position: absolute;
-    bottom: 2px;
+    bottom: 8px;
     left: 10px;
     font-size: 1.2rem;
     font-weight: 500;
