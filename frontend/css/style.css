@@ -63,7 +63,7 @@ nav ul li a:hover{
     background-color: #846133;
     color: whitesmoke;
     font-weight: 600;
-    width: 10%;
+    width: 100%;
     cursor: pointer;
     transition: 0.8s;
 }
@@ -86,31 +86,20 @@ nav ul li a:hover{
     gap: 30px;
 }
 
-.left-section div{
-    width: 50%;
-}
-
-.righ-heading{
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-}
-
-
-.righ-heading h1{
+.left-section h1{
     font-size: 70px;
     font-weight: 600;
     line-height: 85px;
 }
 
-.righ-heading .paragraph{
+.left-section .paragraph{
     font-size: 20px;
     font-weight: 600;
     color: gray;
     width: 100%;
 }
 
-.righ-heading button{
+.left-section button{
     padding: 10px 20px;
     border: 1px solid #846133;
     border-radius: 14px;
@@ -123,7 +112,7 @@ nav ul li a:hover{
     transition: 0.8s;
 
 }
-.righ-heading button:hover{
+.left-section button:hover{
     border: 1px solid whitesmoke;
     background-color: #846133;
     color: whitesmoke;
