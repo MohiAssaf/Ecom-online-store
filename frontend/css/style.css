@@ -80,10 +80,6 @@ nav ul li a:hover{
     width: 100%;
 
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: end;
-    gap: 30px;
 }
 
 .left-section div{
