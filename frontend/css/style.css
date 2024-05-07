@@ -11,8 +11,6 @@
     background-image:  url('../images/background-hero.jpg');
     background-size: cover;
     background-position: top;
-    padding: 10px 4%;
-
 }
 
 
@@ -21,10 +19,12 @@ nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: whitesmoke;
+    padding: 0 3%;
 }
 
 .hero-section .logo{
-    width: 11%;
+    width: 5%;
     cursor: pointer;
 }
 
@@ -41,7 +41,7 @@ nav ul li{
 }
 
 nav ul li a{
-    color: white;
+    color: #846133;
     text-decoration: none;
     font-size: 20px;
     font-weight: 600;
@@ -50,7 +50,7 @@ nav ul li a{
 }
 
 nav ul li a:hover{
-    color: #846133;
+    color: #b8b7b4;
 }
 
 .login{
