@@ -63,7 +63,7 @@ nav ul li a:hover{
     background-color: #846133;
     color: whitesmoke;
     font-weight: 600;
-    width: 10%;
+    width: 100%;
     cursor: pointer;
     transition: 0.8s;
 }
