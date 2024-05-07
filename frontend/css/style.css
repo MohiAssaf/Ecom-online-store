@@ -86,20 +86,30 @@ nav ul li a:hover{
     gap: 30px;
 }
 
-.left-section h1{
+.left-section div{
+    width: 50%;
+}
+
+.right-heading{
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.right-heading h1{
     font-size: 70px;
     font-weight: 600;
     line-height: 85px;
 }
 
-.left-section .paragraph{
+.right-heading .paragraph{
     font-size: 20px;
     font-weight: 600;
     color: gray;
-    width: 40%;
+    width: 100%;
 }
 
-.left-section button{
+.right-heading button{
     padding: 10px 20px;
     border: 1px solid #846133;
     border-radius: 14px;
@@ -112,7 +122,7 @@ nav ul li a:hover{
     transition: 0.8s;
 
 }
-.left-section button:hover{
+.right-heading button:hover{
     border: 1px solid whitesmoke;
     background-color: #846133;
     color: whitesmoke;
