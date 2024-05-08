@@ -10,11 +10,10 @@
     min-height: 100vh;
     background-image:  url('../images/background-hero.jpg');
     background-size: cover;
-    background-position: top;
+    background-position: center;
 }
 
-
-nav{
+header nav{
     width: 100%;
     display: flex;
     align-items: center;
@@ -23,7 +22,8 @@ nav{
     padding: 0 3%;
 }
 
-.hero-section .logo{
+
+header .logo{
     width: 5%;
     cursor: pointer;
 }
@@ -72,15 +72,13 @@ nav ul li a:hover{
     color: #846133;
 }
 
-.left-section{
-    margin-top: 12%;
-    color: #fff;
-    width: 100%;
-
+.hero-section{
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.left-section div{
+.hero-section div{
     width: 50%;
 }
 
@@ -94,6 +92,7 @@ nav ul li a:hover{
     font-size: 70px;
     font-weight: 600;
     line-height: 85px;
+    color: white;
 }
 
 .right-heading .paragraph{
