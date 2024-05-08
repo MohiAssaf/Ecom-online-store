@@ -1,13 +1,12 @@
-
-body{
+.register-form{
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 90vh;
     background-color: lightblue;
 }
 
-.register-form{
+form{
     width: 420px;
     background-color:whitesmoke;
     color: black;
