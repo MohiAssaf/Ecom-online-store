@@ -16,7 +16,11 @@
 }
 
 .contact-header .image{
-    width: 70%;
+    width: 60%;
+}
+
+.contact-header .contact-text{
+    width: 40%;
 }
 
 .contact-header img{
@@ -33,4 +37,9 @@
     text-transform: capitalize;
     color: #846133;
 
+}
+
+.contact-text .desc{
+    color: rgb(62, 62, 62);
+    font-weight: 600;
 }
