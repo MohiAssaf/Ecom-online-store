@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+.contact-form{
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    gap: 3rem;
+}
+
+.contact-header .image{
+    width: 70%;
+}
+
+.contact-header img{
+    width: 100%;
+    border-radius: 30%;
+    padding: 5px;
+    border: 5px solid #846133;
+}
+
+.contact-text h2{
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: #846133;
+
+}
