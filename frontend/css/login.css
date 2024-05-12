@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     min-height: 90vh;
-    background-color: lightblue;
+    background-color: #C4A484;
 }
 
 form{
@@ -49,6 +49,7 @@ form{
     top: 50%;
     transform: translateY(-50%);
     font-size: 1.3rem;
+    color: #C4A484;
 }
 
 .rememberme{
@@ -79,7 +80,7 @@ form{
     border: 1px solid white;
     margin: 1rem 0;
     font-size: 1.2rem;
-    background-color: rgb(167, 214, 255);
+    background-color: #C4A484;
     color: white;
     cursor: pointer;
     transition: 0.6s;
@@ -87,12 +88,12 @@ form{
 }
 .btn:hover{
     background-color: white;
-    color: rgb(167, 214, 255);
-    border-color: rgb(167, 214, 255);
+    color: #C4A484;
+    border-color: #C4A484;
 }
 
 .register a{
-    color: rgb(84, 115, 126);
+    color: #C4A484;
 }
 .register a:hover{
     text-decoration: none;
