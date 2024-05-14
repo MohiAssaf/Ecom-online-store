@@ -50,7 +50,15 @@ nav ul li a{
     transition: 0.5s;
 }
 
-nav ul li a:hover{
+nav ul li i{
+    color: #846133;
+    font-size: 22px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+nav ul li a:hover,
+nav ul li i:hover{
     color: #b8b7b4;
 }
 
