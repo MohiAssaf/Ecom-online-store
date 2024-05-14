@@ -3,7 +3,7 @@
     top: 0;
     right: 0;
     width: 360px;
-    background-color: antiquewhite;
+    background-color: rgb(241, 236, 236);
     min-height: 100vh;
     padding: 1.3rem;
 }
@@ -27,5 +27,7 @@
     width: 100px;
     height: 100px;
     object-fit: contain;
-    padding: 10px;
+    padding: 5px;
+    border: 2px solid #846133;
+    border-radius: 7px;
 }
