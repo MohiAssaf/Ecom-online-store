@@ -31,3 +31,25 @@
     border: 2px solid #846133;
     border-radius: 7px;
 }
+
+.cart-details{
+    display: grid;
+    row-gap: 0.5;
+}
+
+.cart-title{
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.cart-price{
+    font-weight: 500;
+}
+
+.cart-quantity{
+    border: 1px solid black;
+    outline-color: #846133;
+    width: 2.4rem;
+    text-align: center;
+    font-size: 1rem;
+}
