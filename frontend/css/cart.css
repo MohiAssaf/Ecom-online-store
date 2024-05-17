@@ -53,3 +53,21 @@
     text-align: center;
     font-size: 1rem;
 }
+
+.fa-trash{
+    font-size: 1.4rem;
+    color: #846133;
+    cursor: pointer;
+}
+
+.total-price{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1.4rem;
+    border-top: 1px solid black;
+}
+
+.total-title{
+    font-size: 1rem;
+    font-weight: 600;
+}
