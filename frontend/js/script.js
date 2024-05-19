@@ -47,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let cartIcon = header.querySelector('.shopping-cart');
     let cart = header.querySelector('.cart');
     let closeCart = header.querySelector('#close-cart');
+    let removeItems = header.getElementsByClassName('.fa-trash')
 
 
     cartIcon.addEventListener('click', () => {
@@ -56,4 +57,18 @@ document.addEventListener('DOMContentLoaded', () => {
     closeCart.addEventListener('click', () =>{
         cart.classList.remove("active")
     })
+
+
+    for(let i=0; i < removeItems.length; i++){
+        let item = removeItems[i]
+
+        item.addEventListener('click', removeItem)
+    }
+
+
 });
+
+const removeItem = (e) => {
+    let productRemoved = e.target
+    productRemoved.parentElement.remove()
+}

@@ -86,7 +86,7 @@ nav ul li i:hover{
 .cart{
     position: fixed;
     top: 0;
-    right: -100%;
+    right: 0;
     width: 360px;
     background-color: rgb(241, 236, 236);
     min-height: 100vh;
