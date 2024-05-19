@@ -14,12 +14,46 @@ document.addEventListener('DOMContentLoaded', () => {
     
         <a href="/frontend/html/login.html"><button type="button" class="login">Login</button></a>
     </nav>
+
+    <div class="cart">
+
+        <h1 class="title">Your Cart</h1>
+
+        <div class="cart-orders">
+            
+            <div class="cart-box">
+                <img src="../images/pulover.jpg" alt="" class="cart-img">
+                <div class="cart-details">
+                    <div class="cart-title">Pullover</div>
+                    <div class="cart-price">30$</div>
+                    <input type="number" value="1" class="cart-quantity">
+                </div>
+
+                <i class="fa-solid fa-trash"></i> 
+            </div>
+
+            <div class="total-price">
+                <div class="total-title">Total</div>
+                <div class="t-price">0$</div>
+            </div>
+
+            <button class="buy-btn" type="button">Buy Now</button>
+
+            <i class="fa-solid fa-x" id="close-cart"></i>
+        </div>
+    </div>
     `;
 
-    const shoppingCart = header.querySelector('.shopping-cart');
-    console.log(shoppingCart);
+    let cartIcon = header.querySelector('.shopping-cart');
+    let cart = header.querySelector('.cart');
+    let closeCart = header.querySelector('#close-cart');
 
-    shoppingCart.addEventListener('click', () => {
-        console.log('Shopping Cart clicked');
+
+    cartIcon.addEventListener('click', () => {
+        cart.classList.add("active")
     });
+
+    closeCart.addEventListener('click', () =>{
+        cart.classList.remove("active")
+    })
 });

@@ -80,3 +80,123 @@ nav ul li i:hover{
     background-color: whitesmoke;
     color: #846133;
 }
+
+
+/*  Cart css */
+.cart{
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 360px;
+    background-color: rgb(241, 236, 236);
+    min-height: 100vh;
+    padding: 1.3rem;
+    transition: 0.3s;
+}
+
+.cart.active{
+    right: 0;
+}
+
+.cart .title{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.cart-box{
+    display: grid;
+    grid-template-columns: 32% 50% 18%;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+
+}
+
+.cart-img{
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    padding: 5px;
+    border: 2px solid #846133;
+    border-radius: 7px;
+}
+
+.cart-details{
+    display: grid;
+    row-gap: 0.5;
+}
+
+.cart-title{
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.cart-price{
+    font-weight: 500;
+}
+
+.cart-quantity{
+    border: 1px solid black;
+    outline-color: #846133;
+    width: 2.4rem;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.fa-trash{
+    font-size: 1.4rem;
+    color: #846133;
+    cursor: pointer;
+}
+
+.total-price{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1.4rem;
+    border-top: 1px solid black;
+}
+
+.total-title{
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.t-price{
+    margin-left: 0.5rem;
+}
+
+
+.buy-btn{
+    display: flex;
+    margin: 1.5rem auto 0 auto;
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    cursor: pointer;
+    color: #846133;
+    border-radius: 2rem;
+    border: 1px solid #846133;
+    background-color: white;
+}
+
+.buy-btn:hover{
+    color: white;
+    background-color: #846133;
+    transition: 0.3s;
+}
+
+#close-cart{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.4rem;
+    cursor: pointer;
+    padding: 5px;
+}
+
+#close-cart:hover{
+    color: white;
+    background-color: #846133;
+    transition: 0.5s;
+}
