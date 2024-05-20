@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <input type="number" value="1" class="cart-quantity">
                 </div>
 
-                <i class="fa-solid fa-trash"></i> 
+                <i id="remove-item" class="fa-solid fa-trash"></i> 
             </div>
 
             <div class="total-price">
@@ -51,32 +51,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     cartIcon.addEventListener('click', () => {
         cart.classList.add("active")
+
+        let removeItems = cart.querySelectorAll('.fa-trash')
+
+        for(let i=0; i < removeItems.length; i++){
+            let product = removeItems[i]
+
+            product.addEventListener('click', (e) => {
+                let productToRemove = e.target
+                productToRemove.parentElement.remove()
+            })
+        }
     });
 
     closeCart.addEventListener('click', () =>{
         cart.classList.remove("active")
     })
-
-
 });
-
-
-const ready = () => {
-    const header = document.querySelector('header');
-    let removeItems = header.getElementsByClassName('.fa-trash')
-
-    for(let i=0; i < removeItems.length; i++){
-        let item = removeItems[i]
-
-        item.addEventListener('click', (e) => {
-            let productRemoved = e.target
-            productRemoved.parentElement.remove()
-        })
-    }
-}
-
-if(document.readyState == 'loading'){
-    document.addEventListener("DOMContentLoaded", ready)
-}{
-    ready()
-}
+    
