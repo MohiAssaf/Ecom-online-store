@@ -32,6 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 <i id="remove-item" class="fa-solid fa-trash"></i> 
             </div>
 
+        </div>
+        <div class="total-order">
             <div class="total-price">
                 <div class="total-title">Total</div>
                 <div class="t-price">0$</div>
@@ -39,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             <button class="buy-btn" type="button">Buy Now</button>
 
-            <i class="fa-solid fa-x" id="close-cart"></i>
+            <i class="fa-solid fa-x" id="close-cart"></i>     
         </div>
     </div>
     `;
