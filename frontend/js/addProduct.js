@@ -3,17 +3,17 @@ let addProductBtns = document.querySelectorAll('.product-addtocart');
 
 document.addEventListener('DOMContentLoaded', () => {
     let cart = document.querySelector('.cart-orders');
-    let totalPrice = document.querySelector('.t-price');
-    let totalpriceTXT = totalPrice.textContent;
-    let currentTotal = parseFloat(totalpriceTXT.replace('$', ''));
 
     addProductBtns.forEach((productBtn) => {
         productBtn.addEventListener('click', (e) => {
             let productCard = e.target.parentElement.parentElement
             let productImage = productCard.querySelector('.product-img').src;
-            let productName = productCard.querySelector('.product-name').innerText;
+            let productName = productCard.querySelector('.product-name').innerText;       
             let productPrice = productCard.querySelector('.product-price').textContent;
-            let currentPriceN = parseFloat(productPrice.replace('$', ''));
+            var productPriceN = parseFloat(productPrice.replace('$', ''));
+            let totalPrice = document.querySelector('.t-price');
+            let totalpriceTXT = totalPrice.textContent;
+            var currentTotal = parseFloat(totalpriceTXT.replace('$', '')); 
 
 
             cart.innerHTML += `
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             </div>`
 
-            console.log(totalPrice.textContent = currentPriceN + currentTotal + '$')
+            totalPrice.textContent = productPriceN + currentTotal + '$'
             
         })
     })
