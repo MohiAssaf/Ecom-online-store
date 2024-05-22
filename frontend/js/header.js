@@ -39,6 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let cartIcon = header.querySelector('.shopping-cart');
     let cart = header.querySelector('.cart');
     let closeCart = header.querySelector('#close-cart');
+    let totalPrice = cart.querySelector('.t-price').textContent;
+    let totalpriceTXT = totalPrice;
+    var currentTotal = parseFloat(totalpriceTXT.replace('$', '')); 
 
 
     cartIcon.addEventListener('click', () => {
@@ -50,8 +53,13 @@ document.addEventListener('DOMContentLoaded', () => {
             let product = removeItems[i]
 
             product.addEventListener('click', (e) => {
-                let productToRemove = e.target
-                productToRemove.parentElement.remove()
+                let clickedProduct = e.target;
+                let productToRemove = clickedProduct.parentElement
+                let productPriceToRemove = productToRemove.querySelector('.cart-price').innerText;
+                var productPriceToRemoveN = parseFloat(productPriceToRemove.replace('$', ''));
+                totalPrice.textContent = productPriceToRemoveN + currentTotal + '$'
+                productToRemove.remove()
+                console.log(totalPrice)
             })
         }
     });
