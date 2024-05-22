@@ -21,16 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         <div class="cart-orders">
             
-            <div class="cart-box">
-                <img src="../images/pulover.jpg" alt="" class="cart-img">
-                <div class="cart-details">
-                    <div class="cart-title">Pullover</div>
-                    <div class="cart-price">30$</div>
-                    <input type="number" value="1" class="cart-quantity">
-                </div>
-
-                <i id="remove-item" class="fa-solid fa-trash"></i> 
-            </div>
 
         </div>
         <div class="total-order">
