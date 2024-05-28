@@ -44,30 +44,26 @@ document.addEventListener('DOMContentLoaded', () => {
     cartIcon.addEventListener('click', () => {
         cart.classList.add("active")
 
-        let removeItems = cart.querySelectorAll('.fa-trash');
+        let productItems = cart.querySelectorAll('.cart-box');
         let totalPrice = cart.querySelector('.t-price').textContent;
         var currentTotal = parseFloat(totalPrice.replace('$', '')); 
 
-        for(let i=0; i < removeItems.length; i++){
-            let product = removeItems[i]
 
-            product.addEventListener('click', (e) => {
+        for(let i=0; i < productItems.length; i++){
+            let product = productItems[i]
+            let removeItem = product.querySelector('.fa-trash');
+
+            removeItem.addEventListener('click', (e) => {
                 let clickedProduct = e.target;
                 let productToRemove = clickedProduct.parentElement
+
                 let productPriceToRemove = productToRemove.querySelector('.cart-price').innerText;
                 var productPriceToRemoveN = parseFloat(productPriceToRemove.replace('$', ''));
 
-                var productQuantity = productToRemove.querySelector('.cart-quantity').value
-
-                cart.querySelector('.t-price').textContent = currentTotal - (productPriceToRemoveN * productQuantity) + '$'
+                cart.querySelector('.t-price').textContent = currentTotal - productPriceToRemoveN + '$'
+                currentTotal -= productPriceToRemoveN
                 productToRemove.remove()
               
-            })
-
-            cart.querySelector('.cart-quantity').addEventListener('click', (e) =>{
-                let quantity = e.target.value
-                let totalQuantity = productPriceN * quantity
-                cart.querySelector('.t-price').textContent = totalQuantity + currentTotal + '$'
             })
         }
     });
@@ -76,6 +72,6 @@ document.addEventListener('DOMContentLoaded', () => {
         cart.classList.remove("active")
     })
 
-    buyCart.addEventListener('click', () => {
+    buyCart.addEventListener('click', (e) => {
 })
 });
