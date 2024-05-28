@@ -72,6 +72,25 @@ document.addEventListener('DOMContentLoaded', () => {
         cart.classList.remove("active")
     })
 
-    buyCart.addEventListener('click', (e) => {
+    buyCart.addEventListener('click', () => {
+        let productItems = cart.querySelectorAll('.cart-box');
+        let currentTotal = cart.querySelector('.t-price').textContent;
+
+        if(currentTotal == '0$'){
+            alert('You didnt add any products to buy :(\nYou have to add some products before pressing the buy button')
+            closeCart.click()
+        }else{
+            alert(`Thank you for shopping from mo's fashion store :)\nYour order of ${currentTotal} will be deleviered in 3 days.\nHave a nice day!!`)
+    
+            for(let i=0; i < productItems.length; i++){
+                let product = productItems[i]
+                product.remove()
+            }
+            cart.querySelector('.t-price').textContent = 0 + '$'
+            currentTotal = 0
+    
+            closeCart.click()
+        }
+
 })
 });
