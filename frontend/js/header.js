@@ -39,11 +39,14 @@ document.addEventListener('DOMContentLoaded', () => {
     let cartIcon = header.querySelector('.shopping-cart');
     let cart = header.querySelector('.cart');
     let closeCart = header.querySelector('#close-cart');
+    let buyCart = header.querySelector('.buy-btn')
 
     cartIcon.addEventListener('click', () => {
         cart.classList.add("active")
 
-        let removeItems = cart.querySelectorAll('.fa-trash')
+        let removeItems = cart.querySelectorAll('.fa-trash');
+        let totalPrice = cart.querySelector('.t-price').textContent;
+        var currentTotal = parseFloat(totalPrice.replace('$', '')); 
 
         for(let i=0; i < removeItems.length; i++){
             let product = removeItems[i]
@@ -53,11 +56,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 let productToRemove = clickedProduct.parentElement
                 let productPriceToRemove = productToRemove.querySelector('.cart-price').innerText;
                 var productPriceToRemoveN = parseFloat(productPriceToRemove.replace('$', ''));
-                let totalPrice = cart.querySelector('.t-price').textContent;
-                var currentTotal = parseFloat(totalPrice.replace('$', '')); 
-                totalPrice.textContent = currentTotal - productPriceToRemoveN + '$'
+
+                var productQuantity = productToRemove.querySelector('.cart-quantity').value
+
+                cart.querySelector('.t-price').textContent = currentTotal - (productPriceToRemoveN * productQuantity) + '$'
                 productToRemove.remove()
               
+            })
+
+            cart.querySelector('.cart-quantity').addEventListener('click', (e) =>{
+                let quantity = e.target.value
+                let totalQuantity = productPriceN * quantity
+                cart.querySelector('.t-price').textContent = totalQuantity + currentTotal + '$'
             })
         }
     });
@@ -65,5 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
     closeCart.addEventListener('click', () =>{
         cart.classList.remove("active")
     })
+
+    buyCart.addEventListener('click', () => {
+})
 });
-    
