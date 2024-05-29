@@ -96,6 +96,7 @@ nav ul li i:hover{
 
 .cart.active{
     right: 0;
+    z-index: 100;
 }
 
 .cart .title{
