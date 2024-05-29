@@ -1,5 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     const header = document.querySelector('header');
+    const footer = document.querySelector('footer')
+
+    footer.innerHTML = `
+    <p class="copyright">Copyright All Rights Resereved &#169 || Created by mo's fashion store</p>`
 
     header.innerHTML = `
     <nav class="navigation">

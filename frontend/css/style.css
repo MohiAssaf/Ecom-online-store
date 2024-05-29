@@ -201,3 +201,11 @@ nav ul li i:hover{
     background-color: #846133;
     transition: 0.5s;
 }
+
+
+footer {
+    width: 100%;
+    padding: 1rem;
+    background-color: whitesmoke;
+    text-align: center;
+}
