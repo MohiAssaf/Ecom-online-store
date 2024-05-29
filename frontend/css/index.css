@@ -33,24 +33,34 @@
     width: 100%;
 }
 
-.right-heading button{
+
+.right-heading button {
     padding: 10px 20px;
     border: 1px solid #846133;
     border-radius: 14px;
     font-size: 15px;
     background-color: white;
-    color: #846133;
     font-weight: 600;
     width: 40%;
     cursor: pointer;
     transition: 0.8s;
 
 }
+
+
 .right-heading button:hover{
     border: 1px solid whitesmoke;
     background-color: #846133;
     color: whitesmoke;
     
+}
+
+.right-heading button a {
+    color: #846133;
+}
+
+.right-heading button a:hover{
+    color: white;
 }
 
 .popular-items{
