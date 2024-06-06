@@ -29,6 +29,15 @@ class RequestHandler(BaseHTTPRequestHandler):
                 captch_bs64 = base64.b64encode(captcha_data).decode('utf-8')
                 html = html.replace('{captcha_img}', f'<img src="data:image/png;base64,{captch_bs64}" alt="CAPTCHA">')
                 self.wfile.write(html.encode('utf-8'))
+                
+        elif path == '/login':
+            self.send_response(200)
+            self.send_header('Content-type', 'text/html')
+            self.end_headers()
+            
+            with open('../frontend/html/login.html') as file:
+                html = file.read()
+                self.wfile.write(html.encode('utf-8'))
                     
     
     def do_POST(self):
