@@ -39,6 +39,12 @@
                 <i class="fa-solid fa-lock"></i>
             </div>
 
+            <div class="captcha">
+                <label for="captcha">Captcha:</label>
+                {captcha_img}
+                <input type="text" id="captcha" name="captcha" required>
+            </div>
+
             <div class="rememberme">
                 <label for="">
                     <input type="checkbox">Remember me
@@ -50,12 +56,6 @@
 
             <div class="Login">
                 <p>Already have an account? <a href="../html/login.html">Login</a></p>
-            </div>
-
-            <div class="captcha">
-                <label for="captcha">Captcha:</label>
-                {captcha_img}
-                <input type="text" id="captcha" name="captcha" required>
             </div>
         </form>
     </div>

@@ -47,6 +47,14 @@ form{
     color: #C4A484;
 }
 
+.captcha{
+    padding-bottom: 2.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
 .rememberme{
     display: flex;
     justify-content: space-between;
