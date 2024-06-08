@@ -38,6 +38,20 @@ class RequestHandler(BaseHTTPRequestHandler):
             with open('../frontend/html/login.html') as file:
                 html = file.read()
                 self.wfile.write(html.encode('utf-8'))
+                
+        elif path.endswith('.css'):
+            file_p = '../frontend' + path
+
+            with open(file_p, 'rb') as file:
+                self.send_response(200)
+                self.send_header('Content-type', 'text/css')
+                self.end_headers()
+                self.wfile.write(file.read())
+                
+        else:
+            self.send_response(404)
+            self.end_headers()
+            self.wfile.write(b'404 Not Found')
                     
     
     def do_POST(self):
@@ -47,6 +61,8 @@ class RequestHandler(BaseHTTPRequestHandler):
         content_len = int(self.headers['Content-Length'])
         post_data = self.rfile.read(content_len)
         data = parse_qs(post_data.decode('utf-8'))
+        
+        
         
     
     
