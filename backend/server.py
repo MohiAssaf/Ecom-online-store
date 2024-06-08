@@ -2,6 +2,7 @@ import socketserver
 import io
 import base64
 from http.server import BaseHTTPRequestHandler, HTTPServer
+from http.cookies import SimpleCookie
 from urllib.parse import urlparse, parse_qs
 from db import create_user_table
 from captch_generator import generate_captcha_text, generate_captcha_img
@@ -69,6 +70,27 @@ class RequestHandler(BaseHTTPRequestHandler):
             username = data.get('username')[0]
             password = data.get('password')[0]
             repeat_password = data.get('repassword')[0]
+            captcha_input = data.get('captcha')[0]
+            
+            cookie_header = self.headers.get('Cookie')
+            
+            if not cookie_header:
+                self.send_response(400)
+                self.end_headers()
+                self.wfile.write(b'Missing captcha')
+                return
+            
+            cookie = SimpleCookie(cookie_header)
+            captcha_txt = cookie.get('captcha').value
+            
+            if captcha_input != captcha_txt:
+                self.send_response(400)
+                self.end_headers()
+                self.wfile.write(b'Invalid Captcha')
+                return
+                
+            
+            
             
         elif path == '/login':
             username = data.get('username')[0]
