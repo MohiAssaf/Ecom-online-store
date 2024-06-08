@@ -69,6 +69,10 @@ class RequestHandler(BaseHTTPRequestHandler):
             username = data.get('username')[0]
             password = data.get('password')[0]
             repeat_password = data.get('repassword')[0]
+            
+        elif path == '/login':
+            username = data.get('username')[0]
+            password = data.get('password')[0]
         
         
         
