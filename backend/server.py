@@ -62,6 +62,14 @@ class RequestHandler(BaseHTTPRequestHandler):
         post_data = self.rfile.read(content_len)
         data = parse_qs(post_data.decode('utf-8'))
         
+        if path == '/register':
+            first_name = data.get('first_name')[0]
+            last_name = data.get('last_name')[0]
+            email = data.get('email')[0]
+            username = data.get('username')[0]
+            password = data.get('password')[0]
+            repeat_password = data.get('repassword')[0]
+        
         
         
     
