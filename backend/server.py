@@ -4,7 +4,7 @@ import base64
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from http.cookies import SimpleCookie
 from urllib.parse import urlparse, parse_qs
-from db import create_user_table
+from db import create_user_table, connect_db
 from captch_generator import generate_captcha_text, generate_captcha_img
 
 
@@ -94,6 +94,20 @@ class RequestHandler(BaseHTTPRequestHandler):
                 self.end_headers()
                 self.wfile.write(b'Passwords don\'t match')
                 return
+            
+            conn = connect_db()
+            cursor = conn.cursor()
+            
+            cursor.execute('SELECT * FROM users WHERE username = %s', (username,))
+            user_exists= cursor.fetchone()
+            
+            if user_exists:
+                self.send_response(400)
+                self.end_headers()
+                self.wfile.write(b'User already exists, please choose a different username')
+                return
+                
+            
             
             
                 
