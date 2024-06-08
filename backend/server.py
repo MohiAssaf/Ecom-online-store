@@ -88,6 +88,14 @@ class RequestHandler(BaseHTTPRequestHandler):
                 self.end_headers()
                 self.wfile.write(b'Invalid Captcha')
                 return
+            
+            if password != repeat_password:
+                self.send_response(400)
+                self.end_headers()
+                self.wfile.write(b'Passwords don\'t match')
+                return
+            
+            
                 
             
             
