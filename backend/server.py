@@ -6,6 +6,7 @@ from http.cookies import SimpleCookie
 from urllib.parse import urlparse, parse_qs
 from db import create_user_table, connect_db
 from captch_generator import generate_captcha_text, generate_captcha_img
+from werkzeug.security import generate_password_hash
 
 
 class RequestHandler(BaseHTTPRequestHandler):
@@ -104,8 +105,18 @@ class RequestHandler(BaseHTTPRequestHandler):
             if user_exists:
                 self.send_response(400)
                 self.end_headers()
-                self.wfile.write(b'User already exists, please choose a different username')
+                self.wfile.write(b'Username already exists, please choose a different username')
                 return
+            
+            cursor.execute('INSERT INTO users(first_name, last_name, email, username, password) VALUES(%s, %s, %s, %s, %s)',
+                           (first_name, last_name, email, username, generate_password_hash(password)))
+            
+            conn.commit()
+            self.send_response(302)
+            self.send_header('Location', '/login')
+            self.end_headers()
+            
+            
                 
             
             
