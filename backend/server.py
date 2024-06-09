@@ -15,7 +15,35 @@ class RequestHandler(BaseHTTPRequestHandler):
         parsed_path = urlparse(self.path)
         path = parsed_path.path
         
-        if path == '/register':
+        if path == '/':
+            self.send_response(200)
+            self.send_header('Content-type', 'text/html')
+            self.end_headers()
+            
+            with open('../frontend/html/index.html', encoding='utf-8') as file:
+                html = file.read()
+                self.wfile.write(html.encode('utf-8'))
+                
+        elif path == '/products':
+            self.send_response(200)
+            self.send_header('Content-type', 'text/html')
+            self.end_headers()
+            
+            with open('../frontend/html/products.html', encoding='utf-8') as file:
+                html = file.read()
+                self.wfile.write(html.encode('utf-8'))
+                
+                
+        elif path == '/contact':
+            self.send_response(200)
+            self.send_header('Content-type', 'text/html')
+            self.end_headers()
+            
+            with open('../frontend/html/contact.html', encoding='utf-8') as file:
+                html = file.read()
+                self.wfile.write(html.encode('utf-8'))
+        
+        elif path == '/register':
             captcha_txt = generate_captcha_text()
             self.send_response(200)
             self.send_header('Content-type', 'text/html')
@@ -143,5 +171,5 @@ if __name__ == '__main__':
     create_user_table()
     server_address = ('', 8000)
     httpd = ThreadedHTTPServer(server_address, RequestHandler)
-    httpd.serve_forever()
     print('The server is running on port 8000')
+    httpd.serve_forever()
