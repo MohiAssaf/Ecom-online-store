@@ -1,6 +1,8 @@
 import socketserver
 import io
+import os
 import base64
+import mimetypes
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from http.cookies import SimpleCookie
 from urllib.parse import urlparse, parse_qs
@@ -82,9 +84,18 @@ class RequestHandler(BaseHTTPRequestHandler):
                     self.wfile.write(file.read())
                     
             else:
-                self.send_response(404)
-                self.end_headers()
-                self.wfile.write(b'404 Not Found')
+                static_path = os.path.join('../frontend', path.lstrip('/'))
+                
+                if os.path.isfile(static_path):
+                    self.send_response(200)
+                    mime_type, _ = mimetypes.guess_type(static_path)
+                    self.send_header('Content-type', mime_type)
+                    self.end_headers()
+                    
+                    with open(static_path, 'rb') as file:
+                        self.wfile.write(file.read())
+                        
+                
         except Exception as ex:
             
             self.send_response(500)
