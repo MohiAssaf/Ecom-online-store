@@ -170,17 +170,15 @@ class RequestHandler(BaseHTTPRequestHandler):
             self.end_headers()
             
             
-                
-            
-            
-            
-                
-            
-            
-            
         elif path == '/login':
             username = data.get('username')[0]
             password = data.get('password')[0]
+            
+        conn = connect_db()
+        cursor = conn.cursor()
+        
+        cursor.execute("SELECT * FROM users WHERE username = %s", (username, ))
+        user = cursor.fetchone()
         
         
         
