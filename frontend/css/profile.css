@@ -1,0 +1,16 @@
+.profile{
+    min-height: 90vh;
+    background-color: #C4A484;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.profile-container{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+
+}
