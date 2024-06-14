@@ -193,7 +193,11 @@ class RequestHandler(BaseHTTPRequestHandler):
                 self.send_header('Content-Type', 'text/plain')
                 self.end_headers()
                 self.wfile.write(b'Passwords don\'t match')
-
+        else:
+            self.send_response(401)
+            self.send_header('Content-Type', 'text/plain')
+            self.end_headers()
+            self.wfile.write(b'Invalid credentials')
         
         
         
