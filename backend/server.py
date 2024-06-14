@@ -8,7 +8,7 @@ from http.cookies import SimpleCookie
 from urllib.parse import urlparse, parse_qs
 from db import create_user_table, connect_db
 from captch_generator import generate_captcha_text, generate_captcha_img
-from werkzeug.security import generate_password_hash
+from werkzeug.security import generate_password_hash, check_password_hash
 
 
 class RequestHandler(BaseHTTPRequestHandler):
@@ -179,6 +179,21 @@ class RequestHandler(BaseHTTPRequestHandler):
         
         cursor.execute("SELECT * FROM users WHERE username = %s", (username, ))
         user = cursor.fetchone()
+        
+        if user:
+            hashed_password = user[5]
+            print(hashed_password)
+            if check_password_hash(hashed_password, password):
+                self.send_response(302)
+                self.send_header('Set-Cookie', f'username={username}; Path=/')
+                self.send_header('Location', '/logged-in')
+                self.end_headers()
+            else:
+                self.send_response(401)
+                self.send_header('Content-Type', 'text/plain')
+                self.end_headers()
+                self.wfile.write(b'Passwords don\'t match')
+
         
         
         
