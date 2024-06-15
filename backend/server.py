@@ -7,7 +7,7 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 from http.cookies import SimpleCookie
 from urllib.parse import urlparse, parse_qs
 from db import create_user_table, connect_db
-from backend.util import generate_captcha_text, generate_captcha_img, generate_session_id
+from util import generate_captcha_text, generate_captcha_img, generate_session_id
 from werkzeug.security import generate_password_hash, check_password_hash
 
 
@@ -186,12 +186,12 @@ class RequestHandler(BaseHTTPRequestHandler):
             if check_password_hash(hashed_password, password):
                 session_id = generate_session_id()
                 
-                cursor.execute('UPDATE users SET session_id = %s WHERE username = %s', (session_id, username))
+                cursor.execute('UPDATE users SET sessionid = %s WHERE username = %s', (session_id, username))
                 conn.commit()
                 
                 self.send_response(302)
                 self.send_header('Set-Cookie', f'session_id={session_id}; Path=/')
-                self.send_header('Location', '/logged-in')
+                self.send_header('Location', '/')
                 self.end_headers()
             else:
                 self.send_response(401)

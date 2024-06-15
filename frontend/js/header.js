@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <li class="shopping-cart"><i class="fa-solid fa-bag-shopping"></i></li>
         </ul>
     
-        <a href="/frontend/html/login.html"><button type="button" class="login">Login</button></a>
+        <a href="/login"><button type="button" class="login">Login</button></a>
     </nav>
 
     <div class="cart">
