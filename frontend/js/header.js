@@ -1,23 +1,53 @@
+const getCookie = (name) => {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+    return null;
+}
+
+
 document.addEventListener('DOMContentLoaded', () => {
     const header = document.querySelector('header');
-    const footer = document.querySelector('footer')
+    const footer = document.querySelector('footer');
+    let navInnerHtml = null
+    let cookieSession = getCookie('session_id')
 
-    footer.innerHTML = `
-    <p class="copyright">Copyright All Rights Resereved &#169 || Created by mo's fashion store</p>`
+    if ( cookieSession) {
 
-    header.innerHTML = `
-    <nav class="navigation">
-        <img src="../images/logo1.png" alt="" class="logo">
-    
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/products">Products</a></li>
-            <li><a href="/contact">Contact</a></li>
-            <li class="shopping-cart"><i class="fa-solid fa-bag-shopping"></i></li>
-        </ul>
-    
-        <a href="/login"><button type="button" class="login">Login</button></a>
-    </nav>
+        navInnerHtml = `    
+            <nav class="navigation">
+                <img src="../images/logo1.png" alt="" class="logo">
+            
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/products">Products</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li class="shopping-cart"><i class="fa-solid fa-bag-shopping"></i></li>
+                    <li class="shopping-cart"><i class="fa-solid fa-id-badge"></i></li>
+                </ul>
+            
+                <a href="/logout"><button type="button" class="login">Logout</button></a>
+            </nav>
+        `
+    }else{
+
+        navInnerHtml = `
+            <nav class="navigation">
+                <img src="../images/logo1.png" alt="" class="logo">
+            
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/products">Products</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li class="shopping-cart"><i class="fa-solid fa-bag-shopping"></i></li>
+                </ul>
+            
+                <a href="/login"><button type="button" class="login">Login</button></a>
+            </nav>`
+
+    }
+
+    header.innerHTML =  navInnerHtml + `
 
     <div class="cart">
 
@@ -39,6 +69,9 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
     </div>
     `;
+
+    footer.innerHTML = `
+    <p class="copyright">Copyright All Rights Resereved &#169 || Created by mo's fashion store</p>`
 
     let cartIcon = header.querySelector('.shopping-cart');
     let cart = header.querySelector('.cart');
