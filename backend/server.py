@@ -74,6 +74,15 @@ class RequestHandler(BaseHTTPRequestHandler):
                     html = file.read()
                     self.wfile.write(html.encode('utf-8'))
                     
+            elif path == '/profile':
+                self.send_response(200)
+                self.send_header('Content-type', 'text/html')
+                self.end_headers()
+                
+                with open('../frontend/html/profile.html') as file:
+                    html = file.read()
+                    self.wfile.write(html.encode('utf-8'))
+                    
             elif path.endswith('.css'):
                 file_p = '../frontend' + path
 
@@ -82,6 +91,7 @@ class RequestHandler(BaseHTTPRequestHandler):
                     self.send_header('Content-type', 'text/css')
                     self.end_headers()
                     self.wfile.write(file.read())
+                
                     
             else:
                 static_path = os.path.join('../frontend', path.lstrip('/'))
