@@ -24,3 +24,26 @@
     text-align: center;
     font-size: 1.7rem;
 }
+
+.profile-btns{
+    padding-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    border: 1px solid #C4A484;
+    background-color: white;
+    font-weight: 600;
+    border-radius: 1rem;
+}
+
+button:hover{
+    background-color: #C4A484;
+    color: white;
+    transition: 0.5s;
+    cursor: pointer;
+}

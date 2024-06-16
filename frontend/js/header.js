@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <li><a href="/products">Products</a></li>
                     <li><a href="/contact">Contact</a></li>
                     <li class="shopping-cart"><i class="fa-solid fa-bag-shopping"></i></li>
-                    <li class="shopping-cart"><i class="fa-solid fa-id-badge"></i></li>
+                    <li class="shopping-cart"><a href="/profile"><i class="fa-solid fa-id-badge"></i></a></li>
                 </ul>
             
                 <a href="/logout"><button type="button" class="login">Logout</button></a>
