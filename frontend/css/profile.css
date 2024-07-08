@@ -20,9 +20,17 @@
     font-size: 0.8rem;
 }
 
-.username{
-    text-align: center;
-    font-size: 1.7rem;
+.img-container{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    padding-bottom: 1rem;
+}
+
+.profile-img{
+    width: 200px;
+    border: 2px solid #C4A484;
+    border-radius: 50%;
 }
 
 .profile-btns{
