@@ -184,30 +184,30 @@ class RequestHandler(BaseHTTPRequestHandler):
             username = data.get('username')[0]
             password = data.get('password')[0]
             
-        conn = connect_db()
-        cursor = conn.cursor()
-        
-        cursor.execute("SELECT * FROM users WHERE username = %s", (username, ))
-        user = cursor.fetchone()
-        
-        if user:
-            hashed_password = user[5]
-            print(hashed_password)
-            if check_password_hash(hashed_password, password):
-                session_id = generate_session_id()
-                
-                cursor.execute('UPDATE users SET sessionid = %s WHERE username = %s', (session_id, username))
-                conn.commit()
-                
-                self.send_response(302)
-                self.send_header('Set-Cookie', f'session_id={session_id}; Path=/')
-                self.send_header('Location', '/')
-                self.end_headers()
-            else:
-                self.send_response(401)
-                self.send_header('Content-Type', 'text/plain')
-                self.end_headers()
-                self.wfile.write(b'Passwords don\'t match')
+            conn = connect_db()
+            cursor = conn.cursor()
+            
+            cursor.execute("SELECT * FROM users WHERE username = %s", (username, ))
+            user = cursor.fetchone()
+            
+            if user:
+                hashed_password = user[5]
+                print(hashed_password)
+                if check_password_hash(hashed_password, password):
+                    session_id = generate_session_id()
+                    
+                    cursor.execute('UPDATE users SET sessionid = %s WHERE username = %s', (session_id, username))
+                    conn.commit()
+                    
+                    self.send_response(302)
+                    self.send_header('Set-Cookie', f'session_id={session_id}; Path=/')
+                    self.send_header('Location', '/')
+                    self.end_headers()
+                else:
+                    self.send_response(401)
+                    self.send_header('Content-Type', 'text/plain')
+                    self.end_headers()
+                    self.wfile.write(b'Passwords don\'t match')
         else:
             self.send_response(401)
             self.send_header('Content-Type', 'text/plain')
