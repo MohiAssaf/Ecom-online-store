@@ -74,6 +74,12 @@ class RequestHandler(BaseHTTPRequestHandler):
                     html = file.read()
                     self.wfile.write(html.encode('utf-8'))
                     
+            elif path == '/logout':
+                self.send_response(302)
+                self.send_header('Set-Cookie', 'session_id=; Max-Age=0; Path=/')
+                self.send_header('Location', '/login')
+                self.end_headers()
+                    
             elif path == '/profile':
                 self.send_response(200)
                 self.send_header('Content-type', 'text/html')
