@@ -17,7 +17,8 @@ def create_user_table():
         email VARCHAR(50) NOT NULL,
         username VARCHAR(50) NOT NULL,
         password VARCHAR(250) NOT NULL,
-        sessionid VARCHAR(250) NOT NULL
+        sessionid VARCHAR(250) NOT NULL,
+        profile_picture BYTEA
     )             
 ''')
     

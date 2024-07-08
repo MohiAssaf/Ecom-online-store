@@ -141,6 +141,7 @@ class RequestHandler(BaseHTTPRequestHandler):
             password = data.get('password')[0]
             repeat_password = data.get('repassword')[0]
             captcha_input = data.get('captcha')[0]
+            profile_pic = data.get('profile_picture')[0]
             
             cookie_header = self.headers.get('Cookie')
             
@@ -177,8 +178,8 @@ class RequestHandler(BaseHTTPRequestHandler):
                 self.wfile.write(b'Username already exists, please choose a different username')
                 return
             
-            cursor.execute('INSERT INTO users(first_name, last_name, email, username, password) VALUES(%s, %s, %s, %s, %s)',
-                           (first_name, last_name, email, username, generate_password_hash(password)))
+            cursor.execute('INSERT INTO users(first_name, last_name, email, username, password, profile_picture) VALUES(%s, %s, %s, %s, %s, %s)',
+                           (first_name, last_name, email, username, generate_password_hash(password), profile_pic))
             
             conn.commit()
             self.send_response(302)
