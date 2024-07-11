@@ -103,6 +103,12 @@ class RequestHandler(BaseHTTPRequestHandler):
                 
                 first_name, last_name, email, username, profile_picture = user
                 
+                if profile_picture:
+                    profile_picture_base64 = base64.b64encode(profile_picture).decode('utf-8')
+                    profile_picture_src = f"data:image/png;base64,{profile_picture_base64}"
+                else:
+                    profile_picture_src = '../images/profile-default.png'
+                
                 self.send_response(200)
                 self.send_header('Content-type', 'text/html')
                 self.end_headers()
@@ -112,8 +118,10 @@ class RequestHandler(BaseHTTPRequestHandler):
                     html = html.replace('{first_name}', first_name) \
                                 .replace('{last_name}', last_name) \
                                 .replace('{email}', email) \
-                                .replace('{username}', username) 
-                self.wfile.write(html.encode('utf-8'))
+                                .replace('{username}', username) \
+                                .replace('{profile_picture}', profile_picture_src)
+                    self.wfile.write(html.encode('utf-8'))
+                    
             elif path.endswith('.css'):
                 file_p = '../frontend' + path
 
