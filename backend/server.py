@@ -81,6 +81,20 @@ class RequestHandler(BaseHTTPRequestHandler):
                 self.end_headers()
                     
             elif path == '/profile':
+                cookie_header = self.headers.get('Cookie')
+                cookie = SimpleCookie(cookie_header)
+                session_id = cookie.get('session_id')
+                if not session_id:
+                    self.send_response(302)
+                    self.send_header('Location', '/login')
+                    self.end_headers()
+                    return
+                
+                conn = connect_db()
+                cursor = conn.cursor()
+                cursor.execute("SELECT first_name, last_name, email, username, profile_picture FROM users WHERE sessionid = %s", (session_id.value,))
+                user = cursor.fetchone()
+                
                 self.send_response(200)
                 self.send_header('Content-type', 'text/html')
                 self.end_headers()
