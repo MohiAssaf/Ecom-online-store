@@ -95,14 +95,25 @@ class RequestHandler(BaseHTTPRequestHandler):
                 cursor.execute("SELECT first_name, last_name, email, username, profile_picture FROM users WHERE sessionid = %s", (session_id.value,))
                 user = cursor.fetchone()
                 
+                if not user:
+                    self.send_response(302)
+                    self.send_header('Location', '/login')
+                    self.end_headers()
+                    return
+                
+                first_name, last_name, email, username, profile_picture = user
+                
                 self.send_response(200)
                 self.send_header('Content-type', 'text/html')
                 self.end_headers()
                 
                 with open('../frontend/html/profile.html') as file:
                     html = file.read()
-                    self.wfile.write(html.encode('utf-8'))
-                    
+                    html = html.replace('{first_name}', first_name) \
+                                .replace('{last_name}', last_name) \
+                                .replace('{email}', email) \
+                                .replace('{username}', username) 
+                self.wfile.write(html.encode('utf-8'))
             elif path.endswith('.css'):
                 file_p = '../frontend' + path
 
