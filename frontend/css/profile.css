@@ -70,3 +70,12 @@ button:hover{
     transition: 0.5s;
     cursor: pointer;
 }
+
+button a{
+    color: black;
+}
+
+
+button a:hover{
+    color: white;
+}
