@@ -122,6 +122,16 @@ class RequestHandler(BaseHTTPRequestHandler):
                                 .replace('{profile_picture}', profile_picture_src)
                     self.wfile.write(html.encode('utf-8'))
             elif path == '/update-profile':
+                
+                cookie_header = self.headers.get('Cookie')
+                cookie = SimpleCookie(cookie_header)
+                session_id = cookie.get('session_id')
+                if not session_id:
+                    self.send_response(302)
+                    self.send_header('Location', '/login')
+                    self.end_headers()
+                    return
+                
                 self.send_response(200)
                 self.send_header('Content-type', 'text/html')
                 self.end_headers()
