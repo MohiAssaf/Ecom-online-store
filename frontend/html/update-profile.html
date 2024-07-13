@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Profile Info</title>
+    <script src="https://kit.fontawesome.com/b010675d1a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/update_profile.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<header></header>
+
+<body>
+
+    <div class="update-form">
+        <form action="/update" method="post">
+            <h1 class="title">Update</h1>
+
+            <div class="input-box">
+                <input type="text" placeholder="First Name" required name="first_name">
+            </div>
+            <div class="input-box">
+                <input type="text" placeholder="Last Name" required name="last_name">
+            </div>
+            <div class="input-box">
+                <input type="email" placeholder="Email" required name="email">
+                <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div class="input-box">
+                <input type="text" placeholder="Username" required name="username">
+                <i class="fa-solid fa-circle-user"></i>
+            </div>
+            <div class="input-box">
+                <input type="file" placeholder="Profile Picture" required name="profile_picture">
+                <i class="fa-regular fa-image"></i>
+            </div>
+
+            <button type="submit" class="btn">Update</button>
+
+            <div class="Login">
+                <p>Changed your mind? Go back <a href="/">Profile</a></p>
+            </div>
+        </form>
+    </div>
+    
+</body>
+
+<footer></footer>
+</html>
+
+<script src="../js/header.js"></script>
