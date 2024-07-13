@@ -121,7 +121,15 @@ class RequestHandler(BaseHTTPRequestHandler):
                                 .replace('{username}', username) \
                                 .replace('{profile_picture}', profile_picture_src)
                     self.wfile.write(html.encode('utf-8'))
-                    
+            elif path == '/update-profile':
+                self.send_response(200)
+                self.send_header('Content-type', 'text/html')
+                self.end_headers()
+                
+                with open('../frontend/html/update-profile.html', encoding='utf-8') as file:
+                    html = file.read()
+                    self.wfile.write(html.encode('utf-8'))
+                
             elif path.endswith('.css'):
                 file_p = '../frontend' + path
 
