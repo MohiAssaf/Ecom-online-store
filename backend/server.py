@@ -275,6 +275,14 @@ class RequestHandler(BaseHTTPRequestHandler):
             username = data.get('username')[0]
             profile_pic = data.get('profile_picture')[0]
             current_password = data.get('current_password')[0]
+            new_password = data.get('new_password')[0]
+            confirm_new_password = data.get('confirm_new_password')[0]
+            
+            if new_password != confirm_new_password:
+                self.send_response(400)
+                self.end_headers()
+                self.wfile.write(b'Passwords don\'t match')
+                return
             
             
             cookie_header = self.headers.get('Cookie')
