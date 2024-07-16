@@ -266,6 +266,39 @@ class RequestHandler(BaseHTTPRequestHandler):
                     self.send_header('Content-Type', 'text/plain')
                     self.end_headers()
                     self.wfile.write(b'Passwords don\'t match')
+                    
+        elif path == '/update-profile':
+            
+            first_name = data.get('first_name')[0]
+            last_name = data.get('last_name')[0]
+            email = data.get('email')[0]
+            username = data.get('username')[0]
+            profile_pic = data.get('profile_picture')[0]
+            current_password = data.get('current_password')[0]
+            
+            
+            cookie_header = self.headers.get('Cookie')
+            cookie = SimpleCookie(cookie_header)
+            session_id = cookie.get('session_id')
+            
+            conn = connect_db()
+            cursor = conn.cursor()
+            
+            cursor.execute("SELECT * FROM users WHERE sessionid = %s", (session_id, ))
+            user = cursor.fetchone()
+            hashed_password = user[5]
+            
+            if check_password_hash(hashed_password, current_password):
+                pass
+            else:
+                self.send_response(401)
+                self.send_header('Content-Type', 'text/plain')
+                self.end_headers()
+                self.wfile.write(b'Passwords don\'t match')
+
+            
+            
+            
         else:
             self.send_response(401)
             self.send_header('Content-Type', 'text/plain')
