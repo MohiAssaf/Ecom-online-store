@@ -297,7 +297,38 @@ class RequestHandler(BaseHTTPRequestHandler):
             hashed_password = user[5]
             
             if check_password_hash(hashed_password, current_password):
-                pass
+                update_fields = []
+                update_values = []
+                
+                if first_name:
+                    update_fields.append("first_name = %s")
+                    update_values.append(first_name)
+                if last_name:
+                    update_fields.append("last_name = %s")
+                    update_values.append(last_name)
+                if email:
+                    update_fields.append("email = %s")
+                    update_values.append(email)
+                if username:
+                    update_fields.append("username = %s")
+                    update_values.append(username)
+                if profile_pic:
+                    update_fields.append("profile_pic = %s")
+                    update_values.append(profile_pic)            
+                if new_password:
+                    update_fields.append("password = %s")
+                    update_values.append(password)
+                    
+                update_values.append(session_id)
+                print(update_fields)
+                print(update_values)
+                
+                cursor.execute(f"UPDATE users SET {', '.join(update_fields)} WHERE sessionid = %s", tuple(update_values))
+                conn.commit()
+                
+                self.send_response(302)
+                self.send_header('Location', '/profile')
+                self.end_headers()
             else:
                 self.send_response(401)
                 self.send_header('Content-Type', 'text/plain')
