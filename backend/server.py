@@ -273,7 +273,7 @@ class RequestHandler(BaseHTTPRequestHandler):
             last_name = data.get('last_name')[0]
             email = data.get('email')[0]
             username = data.get('username')[0]
-            profile_pic = data.get('profile_picture')[0]
+            profile_pic = data.get('profile_picture')[0] if data.get('profile_picture') else None
             current_password = data.get('current_password')[0]
             new_password = data.get('new_password')[0]
             confirm_new_password = data.get('confirm_new_password')[0]
